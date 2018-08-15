@@ -23,10 +23,12 @@ If you need a version for Vue 1, try `vue-clickaway@1.0`.
 From npm:
 
 ``` sh
-$ npm install vue-clickaway --save
+$ npm install vue-clickaway2 --save
 ```
 
 From CDN, chose the one you prefer:
+
+Only available for version 2.2.2
 
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/vue-clickaway@2.2.2/dist/vue-clickaway.min.js"></script>

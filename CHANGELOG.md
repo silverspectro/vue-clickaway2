@@ -1,3 +1,8 @@
+## [2.2.3] - 2018-06-26
+
+### Changed
+- Fix Cannot read property 'context' of undefined in update callback
+
 ## [2.2.2] - 2018-04-09
 
 ### Changed
