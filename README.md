@@ -76,6 +76,13 @@ export default {
 };
 ```
 
+You can pass an argument conataining any [HTML DOM Event](https://www.w3schools.com/jsref/dom_obj_event.asp) on the directive in the markup:
+
+``` html
+<p v-on-clickaway:mousedown="away">Click away</p>
+<!-- If you don't pass an argument it'll default to click just like previous versions -->
+```
+
 ## Caveats
 
 1. Pay attention to the letter case. `onClickaway` turns into `v-on-clickaway`,

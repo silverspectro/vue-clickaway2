@@ -1,3 +1,8 @@
+## 2.3.0 - 2018-10-24
+
+### Changed
+- Added functionality to support an argument being passed in markup to define what type of event you want the directive to take. `v-on-clickaway:mousedown` would creat an event listener instead of being a `click` event instead would be a `mousedown` event.
+
 ## [2.2.3] - 2018-06-26
 
 ### Changed
