@@ -1,4 +1,4 @@
-# vue-clickaway
+# vue-clickaway2
 
 > Reusable clickaway directive for reusable [Vue.js](https://github.com/vuejs/vue) components
 
@@ -8,8 +8,10 @@
 
 Sometimes you need to detect clicks **outside** of the element (to close a modal
 window or hide a dropdown select). There is no native event for that, and Vue.js
-does not cover you either. This is why `vue-clickaway` exists. Please check out
+does not cover you either. This is why `vue-clickaway2` exists. Please check out
 the [demo](https://jsfiddle.net/simplesmiler/4w1cs8u3/150/) before reading further.
+
+Vue-Clickaway2 is a continuation of Vue-Cickaway.
 
 ## Requirements
 
@@ -25,16 +27,6 @@ From npm:
 $ npm install vue-clickaway2 --save
 ```
 
-From CDN, chose the one you prefer:
-
-Only available for version 2.2.2
-
-``` html
-<script src="https://cdn.jsdelivr.net/npm/vue-clickaway@2.2.2/dist/vue-clickaway.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-clickaway/2.2.2/vue-clickaway.min.js"></script>
-<script src="https://cdn.rawgit.com/simplesmiler/vue-clickaway/2.2.2/dist/vue-clickaway.min.js"></script>
-```
-
 ## Usage
 
 1. Make the directive available to your component
@@ -44,7 +36,7 @@ Only available for version 2.2.2
 The recommended way is to use the mixin:
 
 ``` js
-import { mixin as clickaway } from 'vue-clickaway';
+import { mixin as clickaway } from 'vue-clickaway2';
 
 export default {
   mixins: [ clickaway ],
@@ -60,7 +52,7 @@ export default {
 If mixin does not suit your needs, you can use the directive directly:
 
 ``` js
-import { directive as onClickaway } from 'vue-clickaway';
+import { directive as onClickaway } from 'vue-clickaway2';
 
 export default {
   directives: {
