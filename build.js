@@ -5,21 +5,22 @@ var uglify = require('uglify-js');
 var rollup = require('rollup');
 var replace = require('rollup-plugin-replace');
 
-Promise.all([
-  generateCommonModule(),
-  generateBundledDev(),
-  generateBundledProd()
-]);
+Promise
+  .all([
+    generateCommonModule(),
+    generateBundledDev(),
+    generateBundledProd(),
+  ]);
 
 function generateCommonModule() {
   return rollup
     .rollup({
       entry: 'index.js',
-      external: ['vue']
+      external: [ 'vue' ],
     })
     .then(function(bundle) {
       return bundle.generate({
-        format: 'cjs'
+        format: 'cjs',
       }).code;
     })
     .then(function(code) {
@@ -31,18 +32,18 @@ function generateBundledDev() {
   return rollup
     .rollup({
       entry: 'index.js',
-      external: ['vue'],
+      external: [ 'vue' ],
       plugins: [
         replace({
-          "process.env.NODE_ENV": "'development'"
-        })
-      ]
+          'process.env.NODE_ENV': '\'development\'',
+        }),
+      ],
     })
     .then(function(bundle) {
       return bundle.generate({
         format: 'iife',
         moduleName: 'VueClickaway',
-        globals: { vue: 'Vue' }
+        globals: { vue: 'Vue' },
       }).code;
     })
     .then(function(code) {
@@ -54,28 +55,28 @@ function generateBundledProd() {
   return rollup
     .rollup({
       entry: 'index.js',
-      external: ['vue'],
+      external: [ 'vue' ],
       plugins: [
         replace({
-          'process.env.NODE_ENV': "'production'"
-        })
-      ]
+          'process.env.NODE_ENV': '\'production\'',
+        }),
+      ],
     })
     .then(function(bundle) {
       return bundle.generate({
         format: 'iife',
         moduleName: 'VueClickaway',
-        globals: { vue: 'Vue' }
+        globals: { vue: 'Vue' },
       }).code;
     })
     .then(function(code) {
       return uglify.minify(code, {
-        fromString: true
+        fromString: true,
       }).code;
     })
     .then(function(code) {
       return write('dist/vue-clickaway.min.js', code);
-    });
+    }); 
 }
 
 function write(dest, code) {

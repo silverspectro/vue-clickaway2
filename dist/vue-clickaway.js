@@ -2,21 +2,16 @@
 
   Vue = 'default' in Vue ? Vue['default'] : Vue;
 
-  var version = "2.2.2";
+  var version = '2.2.2';
 
-  var compatible = /^2\./.test(Vue.version);
+  var compatible = (/^2\./).test(Vue.version);
   if (!compatible) {
-    Vue.util.warn(
-      "VueClickaway " +
-        version +
-        " only supports Vue 2.x, and does not support Vue " +
-        Vue.version
-    );
+    Vue.util.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + Vue.version);
   }
 
   // @SECTION: implementation
 
-  var HANDLER = "_vue_clickaway_handler";
+  var HANDLER = '_vue_clickaway_handler';
 
   function bind(el, binding, vnode) {
     unbind(el, binding);
@@ -24,16 +19,12 @@
     var vm = vnode.context;
 
     var callback = binding.value;
-    if (typeof callback !== "function") {
-      if ('development' !== "production") {
+    if (typeof callback !== 'function') {
+      if ('development' !== 'production') {
         Vue.util.warn(
-          "v-" +
-            binding.name +
-            '="' +
-            binding.expression +
-            '" expects a function value, ' +
-            "got " +
-            callback
+          'v-' + binding.name + '="' +
+          binding.expression + '" expects a function value, ' +
+          'got ' + callback
         );
       }
       return;
@@ -58,32 +49,25 @@
       //        to the top.
       // @NOTE: `.path` is non-standard, the standard way is `.composedPath()`
       var path = ev.path || (ev.composedPath ? ev.composedPath() : undefined);
-      if (
-        initialMacrotaskEnded &&
-        (path ? path.indexOf(el) < 0 : !el.contains(ev.target))
-      ) {
+      if (initialMacrotaskEnded && (path ? path.indexOf(el) < 0 : !el.contains(ev.target))) {
         return callback.call(vm, ev);
       }
     };
 
     if (binding.arg) {
       document.documentElement.addEventListener(binding.arg, el[HANDLER], false);
-    } else {
-      // default state, if no argument is passed
-      document.documentElement.addEventListener("click", el[HANDLER], false);
+    } 
+    else { // default state, if no argument is passed
+      document.documentElement.addEventListener('click', el[HANDLER], false);
     }
   }
 
   function unbind(el, binding) {
     if (binding.arg) {
-      document.documentElement.removeEventListener(
-        binding.arg,
-        el[HANDLER],
-        false
-      );
-    } else {
-      // default state, if no argument is passed
-      document.documentElement.removeEventListener("click", el[HANDLER], false);
+      document.documentElement.removeEventListener(binding.arg, el[HANDLER], false);
+    } 
+    else { // default state, if no argument is passed
+      document.documentElement.removeEventListener('click', el[HANDLER], false);
     }
 
     delete el[HANDLER];
@@ -95,11 +79,11 @@
       if (binding.value === binding.oldValue) return;
       bind(el, binding, vnode);
     },
-    unbind: unbind
+    unbind: unbind,
   };
 
   var mixin = {
-    directives: { onClickaway: directive }
+    directives: { onClickaway: directive },
   };
 
   exports.version = version;
