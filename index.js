@@ -7,14 +7,12 @@ if (!compatible) {
   Vue.util.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + Vue.version);
 }
 
-
-
 // @SECTION: implementation
 
 var HANDLER = '_vue_clickaway_handler';
 
 function bind(el, binding, vnode) {
-  unbind(el);
+  unbind(el, binding);
 
   var vm = vnode.context;
 
@@ -54,11 +52,22 @@ function bind(el, binding, vnode) {
     }
   };
 
-  document.documentElement.addEventListener('click', el[HANDLER], false);
+  if (binding.arg) {
+    document.documentElement.addEventListener(binding.arg, el[HANDLER], false);
+  } 
+  else { // default state, if no argument is passed
+    document.documentElement.addEventListener('click', el[HANDLER], false);
+  }
 }
 
-function unbind(el) {
-  document.documentElement.removeEventListener('click', el[HANDLER], false);
+function unbind(el, binding) {
+  if (binding.arg) {
+    document.documentElement.removeEventListener(binding.arg, el[HANDLER], false);
+  } 
+  else { // default state, if no argument is passed
+    document.documentElement.removeEventListener('click', el[HANDLER], false);
+  }
+
   delete el[HANDLER];
 }
 
