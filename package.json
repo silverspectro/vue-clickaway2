@@ -1,11 +1,11 @@
 {
   "name": "vue-clickaway2",
   "description": "Reusable clickaway directive for reusable Vue.js components",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "author": "Denis Karabaza <denis.karabaza@gmail.com>",
   "contributors": [
     "Ciro DE CARO <decaro.ciro@gmail.com>",
-	  "Daniel Turcich <me@danielTurcich.com>"
+    "Daniel Turcich <me@danielTurcich.com>"
   ],
   "browserify": {
     "transform": [
