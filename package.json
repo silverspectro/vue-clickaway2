@@ -36,6 +36,7 @@
   ],
   "license": "MIT",
   "main": "dist/vue-clickaway.common.js",
+  "types": "types/index.d.ts",
   "peerDependencies": {
     "vue": "^2.0.0"
   },
