@@ -1,0 +1,34 @@
+{
+  "projectName": "vue-clickaway2",
+  "projectOwner": "silverspectro",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "silverspectro",
+      "name": "Ciro DE CARO",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2615733?v=4",
+      "profile": "http://www.cirodecaro.net",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "dkonchekov",
+      "name": "Denis Konchekov",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/60604839?v=4",
+      "profile": "https://github.com/dkonchekov",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

@@ -88,6 +88,26 @@ You can pass an argument conataining any [HTML DOM Event](https://www.w3schools.
    an extra check in the handler, for where the event originated from.
    See #9 for an example.
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://www.cirodecaro.net"><img src="https://avatars2.githubusercontent.com/u/2615733?v=4" width="100px;" alt=""/><br /><sub><b>Ciro DE CARO</b></sub></a><br /><a href="https://github.com/silverspectro/vue-clickaway2/commits?author=silverspectro" title="Code">💻</a> <a href="https://github.com/silverspectro/vue-clickaway2/pulls?q=is%3Apr+reviewed-by%3Asilverspectro" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/dkonchekov"><img src="https://avatars1.githubusercontent.com/u/60604839?v=4" width="100px;" alt=""/><br /><sub><b>Denis Konchekov</b></sub></a><br /><a href="https://github.com/silverspectro/vue-clickaway2/commits?author=dkonchekov" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
