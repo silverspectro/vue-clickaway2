@@ -11,7 +11,7 @@ window or hide a dropdown select). There is no native event for that, and Vue.js
 does not cover you either. This is why `vue-clickaway2` exists. Please check out
 the [demo](https://jsfiddle.net/simplesmiler/4w1cs8u3/150/) before reading further.
 
-Vue-Clickaway2 is a continuation of [Vue-Cickaway](https://www.npmjs.com/package/vue-clickaway).
+Vue-Clickaway2 is a continuation of [Vue-Clickaway](https://www.npmjs.com/package/vue-clickaway).
 
 ## Requirements
 
@@ -23,8 +23,14 @@ If you need a version for Vue 1, try `vue-clickaway@1.0`.
 
 From npm:
 
-``` sh
+```sh
 $ npm install vue-clickaway2 --save
+```
+
+Or yarn:
+
+```sh
+$ yarn add vue-clickaway2
 ```
 
 ## Usage
