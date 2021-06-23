@@ -1,10 +1,10 @@
-import Vue from 'vue';
+import { warn, version as VueVersion } from 'vue';
 
-export var version = '2.2.2';
+export var version = '3.0.0';
 
-var compatible = (/^2\./).test(Vue.version);
+var compatible = (/^2\./).test(VueVersion);
 if (!compatible) {
-  Vue.util.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + Vue.version);
+  warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + VueVersion);
 }
 
 // @SECTION: implementation
@@ -19,7 +19,7 @@ function bind(el, binding, vnode) {
   var callback = binding.value;
   if (typeof callback !== 'function') {
     if (process.env.NODE_ENV !== 'production') {
-      Vue.util.warn(
+      warn(
         'v-' + binding.name + '="' +
         binding.expression + '" expects a function value, ' +
         'got ' + callback
@@ -72,12 +72,12 @@ function unbind(el, binding) {
 }
 
 export var directive = {
-  bind: bind,
-  update: function(el, binding, vnode) {
+  beforeMount: bind,
+  updated: function(el, binding, vnode) {
     if (binding.value === binding.oldValue) return;
     bind(el, binding, vnode);
   },
-  unbind: unbind,
+  unmounted: unbind,
 };
 
 export var mixin = {

@@ -1,13 +1,12 @@
 'use strict';
 
-var Vue = require('vue');
-Vue = 'default' in Vue ? Vue['default'] : Vue;
+var vue = require('vue');
 
 var version = '2.2.2';
 
-var compatible = (/^2\./).test(Vue.version);
+var compatible = (/^2\./).test(vue.version);
 if (!compatible) {
-  Vue.util.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + Vue.version);
+  vue.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + vue.version);
 }
 
 // @SECTION: implementation
@@ -22,7 +21,7 @@ function bind(el, binding, vnode) {
   var callback = binding.value;
   if (typeof callback !== 'function') {
     if (process.env.NODE_ENV !== 'production') {
-      Vue.util.warn(
+      vue.warn(
         'v-' + binding.name + '="' +
         binding.expression + '" expects a function value, ' +
         'got ' + callback
@@ -75,12 +74,12 @@ function unbind(el, binding) {
 }
 
 var directive = {
-  bind: bind,
-  update: function(el, binding, vnode) {
+  beforeMount: bind,
+  updated: function(el, binding, vnode) {
     if (binding.value === binding.oldValue) return;
     bind(el, binding, vnode);
   },
-  unbind: unbind,
+  unmounted: unbind,
 };
 
 var mixin = {
