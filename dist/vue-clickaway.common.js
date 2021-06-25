@@ -2,9 +2,9 @@
 
 var vue = require('vue');
 
-var version = '2.2.2';
+var version = '3.0.0';
 
-var compatible = (/^2\./).test(vue.version);
+var compatible = (/^3\./).test(vue.version);
 if (!compatible) {
   vue.warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + vue.version);
 }

@@ -2,7 +2,7 @@ import { warn, version as VueVersion } from 'vue';
 
 export var version = '3.0.0';
 
-var compatible = (/^2\./).test(VueVersion);
+var compatible = (/^3\./).test(VueVersion);
 if (!compatible) {
   warn('VueClickaway ' + version + ' only supports Vue 2.x, and does not support Vue ' + VueVersion);
 }
