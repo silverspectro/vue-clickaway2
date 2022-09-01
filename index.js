@@ -46,7 +46,7 @@ function bind(el, binding, vnode) {
     //        the click, not whether it is there now, that the event has arrived
     //        to the top.
     // @NOTE: `.path` is non-standard, the standard way is `.composedPath()`
-    var path = ev.path || (ev.composedPath ? ev.composedPath() : undefined);
+    var path = ev.composedPath ? ev.composedPath() : ev.path;
     if (initialMacrotaskEnded && (path ? path.indexOf(el) < 0 : !el.contains(ev.target))) {
       return callback.call(vm, ev);
     }
@@ -54,7 +54,7 @@ function bind(el, binding, vnode) {
 
   if (binding.arg) {
     document.documentElement.addEventListener(binding.arg, el[HANDLER], false);
-  } 
+  }
   else { // default state, if no argument is passed
     document.documentElement.addEventListener('click', el[HANDLER], false);
   }
@@ -63,7 +63,7 @@ function bind(el, binding, vnode) {
 function unbind(el, binding) {
   if (binding.arg) {
     document.documentElement.removeEventListener(binding.arg, el[HANDLER], false);
-  } 
+  }
   else { // default state, if no argument is passed
     document.documentElement.removeEventListener('click', el[HANDLER], false);
   }
